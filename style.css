@@ -3,7 +3,6 @@
   src: url(./fonts/Karla-VariableFont_wght.ttf);
   font-style: normal;
 }
-
 :root{
   /* primary */
   --Green-200: hsl(148, 38%, 91%);
@@ -19,7 +18,6 @@ body{
   margin: 0;
 }
 main{
-  outline: 1px solid #555;
   max-width: 1440px;
   box-sizing: border-box;
   display: flex;
@@ -31,13 +29,11 @@ main{
 main .form-container{
   width: 735px;
   margin-top: 8rem;
-  padding-block: 18px;
-  padding-inline: 39px;
+  padding: 18px 39px;
   border-radius: 14px;
   box-sizing: border-box;
-  outline: 1px solid black;
+  border: 1px solid black;
 }
-
 main .form-container h1{
   font-size: 1.9rem;
   margin-bottom: 32px;
@@ -47,81 +43,78 @@ main .form-container .form-fields{
   grid-template-columns: repeat(2, 1fr);
   gap: 28px 16px;
 }
-
 main .form-container .form-fields .input-group{
   display: grid;
-  row-gap: 12px;
+  row-gap: 11px;
 }
 main .form-container .form-fields .input-group .error{
   display: none;
 }
 main .form-container .form-fields .input-group input[type="text"]{
   min-height: 46px;
-  border-radius: 8px;
   border: 1px solid;
   padding-inline: 20px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
-main .form-container .form-fields .input-group:nth-child(3){
-  grid-column: span 2;
+main .form-container .form-fields .email-input{
   row-gap: 11px;
 }
-main .form-container .form-fields .input-group:nth-child(4){
-  grid-column: span 2;
+main .form-container .form-fields .query-input{
   grid-template-columns: repeat(2, 1fr);
   gap: 17px 16px;
 }
-main .form-container .form-fields .input-group:nth-child(4) label{
+main .form-container .form-fields :is(.email-input, .query-input, .query-input label, .message-input, .consent-input, .submit){
   grid-column: span 2;
 }
-main .form-container .form-fields .input-group:nth-child(4) .query-type{
+main .form-container .form-fields :is(.submit, .message-input textarea, .query-input .query-type, .input-group input[type="text"]){
+  border-radius: 8px;
+}
+main .form-container .form-fields .query-input .query-type{
   border: 1px solid;
   min-height: 50px;
   display: flex;
   align-items: center;
   padding-inline: 20px;
-  border-radius: 8px;
   column-gap: 12px;
-
 }
-main .form-container .form-fields .input-group:nth-child(4) .query-type input{
+main .form-container .form-fields .query-input .query-type input{
   --size: 20px;
   width: var(--size);
   height: var(--size);
 }
-main .form-container .form-fields .input-group:nth-child(4) .query-type input,
-main .form-container .form-fields .input-group:nth-child(4) .query-type label{
+main .form-container .form-fields .query-input .query-type input,
+main .form-container .form-fields .query-input .query-type label{
   font-size: 18px;
   cursor: pointer;
 }
-main .form-container .form-fields .input-group:nth-child(5){
-  grid-column: span 2;
-}
-main .form-container .form-fields .input-group:nth-child(5) textarea{
-  border-radius: 8px;
+main .form-container .form-fields .message-input textarea{
   border: 1px solid;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
   min-height: 102px;
   padding: 12px 20px;  
   box-sizing: border-box;
 }
-main .form-container .form-fields .input-group:nth-child(6){
+main .form-container .form-fields .consent-input{
   display: flex;
   align-items: center;
   margin-block: 14px 10px;
   column-gap: 16px;
-  grid-column: span 2;
 }
-main .form-container .form-fields .input-group:nth-child(6) input{
+main .form-container .form-fields .consent-input input{
   --size: 18px;
   width: var(--size);
   height: var(--size);
+  cursor: pointer;
 }
 main .form-container .form-fields .submit{
-  grid-column: span 2;
   min-height: 60px;
-  border-radius: 8px;
-  border: 1px solid black;
+  border: none;
+  font-size: 19px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 2px;
+  color: white;
+  background-color: var(--Green-600);
 }
 
 
