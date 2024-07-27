@@ -24,11 +24,13 @@ main{
   max-width: 1440px;
   box-sizing: border-box;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   min-height: 100svh;
   min-height: 100vh;
   padding-bottom: 100px;
   position: relative;
+  
 }
 main .success-message{
   position: absolute;
@@ -184,6 +186,15 @@ main .form-container .form-fields .submit{
   margin-top: 4px;
   color: white;
   background-color: var(--Green-600);
+}
+
+/* ////////       media queris        ////////  */
+
+
+@media (min-width: 1440px) {
+  main {
+    margin-inline: auto;
+  }
 }
 @media (max-width: 550px) {
   :root{

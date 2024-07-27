@@ -51,6 +51,17 @@ requiredFileds.forEach((field)=>{
 })
 email.addEventListener('input', isValidEmail)
 
+function clearInputs(){
+  requiredFileds.forEach(field => {
+    field.value = null;
+  })
+  email.value = null;
+  queryOptions.forEach(query => {
+    query.checked = false;
+  })
+  consent.checked = false;
+}
+
 
 submitBtn.addEventListener('click', ()=>{
   requiredFileds.forEach(isEmpty);
@@ -60,5 +71,7 @@ submitBtn.addEventListener('click', ()=>{
   for (let i = 0, len = errorContainers.length; i < len; i++) {
     if (errorContainers[i].textContent !== '') return;
   }
+  clearInputs()
+  document.documentElement.scrollTop = 0;
   main.innerHTML += success
 })
